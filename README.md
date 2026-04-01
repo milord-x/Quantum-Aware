@@ -2,6 +2,10 @@
 
 Quantum-Aware is an open-source, local-only toolkit for generating high-entropy passwords, passphrases, and key material with conservative classical and quantum-aware brute-force estimates.
 
+- GitHub repository: `https://github.com/milord-x/Quantum-Aware`
+- GitHub Pages web app: `https://milord-x.github.io/Quantum-Aware/`
+- npm package: `https://www.npmjs.com/package/quantum-aware`
+
 It ships as:
 
 - a browser-based web application
@@ -199,6 +203,32 @@ Build everything:
 npm run build
 ```
 
+## Download and install
+
+### Web app
+
+Open the hosted web version:
+
+```text
+https://milord-x.github.io/Quantum-Aware/
+```
+
+### CLI from npm
+
+Install globally:
+
+```bash
+npm install -g quantum-aware
+```
+
+Check that it works:
+
+```bash
+qa generate password --length 20
+qa generate passphrase --words 6
+qa generate key --bytes 32 --json
+```
+
 ## GitHub Pages
 
 The web app is configured for static hosting with Vite and can be deployed to GitHub Pages through the included workflow.
@@ -209,6 +239,12 @@ The web app is configured for static hosting with Vite and can be deployed to Gi
 2. In GitHub, open `Settings -> Pages`
 3. Under `Build and deployment`, choose `GitHub Actions`
 4. Push to the default branch; the workflow in `.github/workflows/deploy-pages.yml` will publish the web build
+
+Current published Pages URL:
+
+```text
+https://milord-x.github.io/Quantum-Aware/
+```
 
 The Pages build uses:
 
@@ -229,6 +265,12 @@ Global install:
 
 ```bash
 npm install -g quantum-aware
+```
+
+Package page:
+
+```text
+https://www.npmjs.com/package/quantum-aware
 ```
 
 Usage:

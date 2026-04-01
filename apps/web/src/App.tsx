@@ -67,6 +67,8 @@ const text = {
     analysisEmpty: "Quantum-aware estimates appear after generation. They are simplified educational approximations for quantum-computing risk, not guarantees about future attackers or hardware.",
     storageTitle: "How to store passwords and keys safely",
     limitationsTitle: "Limitations and honesty",
+    heroBadgeLabels: ["Local-only", "Secure random", "Conservative model"],
+    heroImageAlt: "Quantum-Aware preview",
     languageEn: "EN",
     languageRu: "RU",
     separators: { hyphen: "Hyphen", underscore: "Underscore", space: "Space", dot: "Dot", slash: "Slash" },
@@ -154,6 +156,8 @@ const text = {
     analysisEmpty: "Оценки в quantum-aware стиле появятся после генерации. Это упрощённые учебные приближения для риска квантовых вычислений, а не гарантия против будущих атак или оборудования.",
     storageTitle: "Как безопасно хранить пароли и ключи",
     limitationsTitle: "Ограничения и честные оговорки",
+    heroBadgeLabels: ["Локально", "Стойкая случайность", "Консервативная модель"],
+    heroImageAlt: "Превью Quantum-Aware",
     languageEn: "EN",
     languageRu: "RU",
     separators: { hyphen: "Дефис", underscore: "Подчёркивание", space: "Пробел", dot: "Точка", slash: "Слэш" },
@@ -210,6 +214,29 @@ const passwordToggleFields: Array<{ key: keyof PasswordOptions }> = [
   { key: "requireEachSelectedType" },
   { key: "excludeDuplicates" },
   { key: "avoidVisuallyConfusingCombinations" }
+];
+
+const heroBadgeIcons = [
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6" aria-hidden="true">
+      <path d="M12 3l7 4v5c0 5-3.2 8-7 9-3.8-1-7-4-7-9V7l7-4z" />
+      <path d="M9.5 12.5l1.8 1.8 3.8-4.3" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6" aria-hidden="true">
+      <rect x="4" y="10" width="16" height="10" rx="3" />
+      <path d="M8 10V8a4 4 0 118 0v2" />
+      <circle cx="12" cy="15" r="1.2" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6" aria-hidden="true">
+      <path d="M6 18L18 6" />
+      <path d="M7.5 7.5h9v9" />
+      <path d="M4 12a8 8 0 1016 0" />
+    </svg>
+  )
 ];
 
 function localizeCoreText(language: Language, sourceText: string, mode: Mode): string {
@@ -348,8 +375,21 @@ export default function App() {
                 <button className={`rounded-full border px-3 py-1 text-xs font-semibold ${language === "ru" ? "border-ink bg-ink text-white" : "border-ink/15 bg-white text-ink"}`} onClick={() => setLanguage("ru")}>{t.languageRu}</button>
               </div>
             </div>
+            <div className="mt-5 flex flex-wrap gap-4">
+              {t.heroBadgeLabels.map((label, index) => (
+                <div key={label} className="flex items-center gap-3 rounded-full border border-white/80 bg-white/95 px-4 py-3 shadow-[0_18px_48px_rgba(255,255,255,0.45)]">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-tide shadow-[inset_0_0_0_1px_rgba(15,23,32,0.06),0_8px_18px_rgba(15,23,32,0.08)]">
+                    {heroBadgeIcons[index]}
+                  </span>
+                  <span className="text-sm font-semibold text-ink/80">{label}</span>
+                </div>
+              ))}
+            </div>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{t.heroTitle}</h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-ink/75">{t.heroBody}</p>
+            <div className="mt-6 overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-3 shadow-panel">
+              <img src={`${import.meta.env.BASE_URL}image.png`} alt={t.heroImageAlt} className="h-auto w-full rounded-[1.4rem] object-cover" />
+            </div>
           </div>
           <div className="grid gap-2 sm:grid-cols-3 lg:w-[27rem]">
             {trustSignals.map((signal) => (
