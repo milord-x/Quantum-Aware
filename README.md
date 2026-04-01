@@ -1,3 +1,22 @@
+
+<h1 align="center">Quantum-Aware</h1>
+
+<p align="center">
+<img src="apps/web/public/image.png" width="900">
+</p>
+
+<p align="center">
+
+  <img src="https://img.shields.io/badge/license-MIT-f8fafc?style=for-the-badge&logoColor=black&color=ffffff&labelColor=f8fafc" />
+
+  <img src="https://img.shields.io/badge/entropy-%E2%89%A5128%20bits-f8fafc?style=for-the-badge&logoColor=black&color=ffffff&labelColor=f8fafc" />
+
+  <img src="https://img.shields.io/badge/model-N%20%E2%86%92%20%E2%88%9AN-f8fafc?style=for-the-badge&logoColor=black&color=ffffff&labelColor=f8fafc" />
+
+  <img src="https://img.shields.io/badge/runtime-node.js%2018%2B-f8fafc?style=for-the-badge&logoColor=black&color=ffffff&labelColor=f8fafc" />
+
+</p>
+
 # Quantum-Aware
 
 Quantum-Aware is an open-source, local-only toolkit for generating high-entropy passwords, passphrases, and key material with conservative classical and quantum-aware brute-force estimates.
