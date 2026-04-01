@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background:
+    radial-gradient(circle at top left, rgba(95, 127, 124, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(191, 106, 63, 0.12), transparent 24%),
+    linear-gradient(180deg, #f7f4ee 0%, #eef3f1 100%);
+}
+
+body {
+  min-height: 100vh;
+  font-family: Aptos, "Segoe UI Variable", "Trebuchet MS", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.panel {
+  @apply rounded-3xl border border-white/60 bg-white/85 shadow-panel backdrop-blur;
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.14em] text-tide uppercase;
+}
+
+.field {
+  @apply w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-tide focus:ring-2 focus:ring-tide/20;
+}
+
+.toggle {
+  @apply flex items-center justify-between gap-4 rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm;
+}

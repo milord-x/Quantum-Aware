@@ -1,0 +1,43 @@
+{
+  "name": "quantum-aware",
+  "version": "0.1.0",
+  "description": "Quantum-Aware CLI for local high-entropy password, passphrase, and key generation.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "qa": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts --help",
+    "prepack": "npm run build",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@quantum-aware/core": "file:../../packages/core",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "security",
+    "password",
+    "passphrase",
+    "entropy",
+    "cli",
+    "quantum-aware"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
