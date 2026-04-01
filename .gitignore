@@ -7,3 +7,9 @@ apps/web/.vite/
 apps/web/dist/
 apps/cli/dist/
 packages/core/dist/
+apps/web/src/*.js
+apps/web/src/*.js.map
+apps/web/src/*.d.ts
+apps/web/*.js
+apps/web/*.js.map
+apps/web/*.d.ts
